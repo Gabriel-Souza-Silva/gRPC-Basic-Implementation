@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\people.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="33.1.1" />
+	<PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+	<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="5.0.11" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.11" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\people.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+</Project>

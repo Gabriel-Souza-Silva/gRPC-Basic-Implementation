@@ -1,0 +1,54 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "GrpcServiceApi";
+
+package people;
+
+service PeopleProtoService 
+{
+  rpc GetPeople (GetPeopleRequest) returns (PeopleResponse);
+  rpc PostPeople (PeopleModel) returns (PeopleModel);
+}
+
+message GetPeopleRequest 
+{
+  
+}
+
+message PeopleResponse 
+{
+  repeated PeopleModel peoples = 1;
+}
+
+message PeopleModel
+{
+	google.protobuf.Timestamp Birthday = 1;
+	string  Name = 2;
+	string  LastName = 3;
+}
+
+
+/*
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceApi";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}*/
